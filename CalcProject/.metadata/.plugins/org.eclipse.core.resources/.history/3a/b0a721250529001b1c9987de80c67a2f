@@ -1,0 +1,67 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Calculadora {
+	
+	
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		int n1=0, n2=0;
+		int add=0, sub=0, mult=0, div=0;
+		String operation = "", sair="";
+		
+			//ENTRADA
+		do {
+		
+		System.out.print("Digite o primeiro numero: ");
+		n1 = entrada.nextInt();
+	
+		System.out.print("Digite o segundo numero: ");
+		n2 = entrada.nextInt();
+		
+		System.out.print("Digite a operação que deseja fazer"
+				+ "(+, -, *, /) : "); 
+		operacao = entrada.next();
+		
+		
+		//CALCULOS
+			
+			add = (n1+n2);
+			sub = (n1-n2); 
+			mult = (n1*n2); 
+			div = (n1/n2);
+			
+		//RESULTADOS
+			
+		switch (operacao) {
+			case ("+") :
+				System.out.print(String.format("O resultado é : %d ", add));
+				break;
+			case ("-") :
+				System.out.print(String.format("O restultado é : %d ", sub));
+				break;
+			case ("*") :
+				System.out.print(String.format("O resultado é : %d ", mult));
+				break;
+			case ("/") :	
+				System.out.print(String.format("O resultado é : %d ", div));
+				break;
+			default :
+				System.out.println("Operação não existe.");
+				break;
+			
+		}// final do switch
+			
+		System.out.println("Deseja continuar ? (S/N)");
+		sair = entrada.next();
+
+	}while (sair.equalsIgnoreCase("s")); 
+				
+		entrada.close();
+		
+	}//Fim do Main
+}//Final de tudo
